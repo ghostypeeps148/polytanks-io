@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://bscwwc0ob5b1s"]
+
+[ext_resource type="Script" path="res://laser.gd" id="1_kqob7"]
+[ext_resource type="Texture2D" uid="uid://bsd2rk7w5r7c8" path="res://Bullet.webp" id="2_yqgd5"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_0540o"]
+radius = 95.0
+
+[node name="Laser" type="Area2D"]
+scale = Vector2(0.2, 0.2)
+script = ExtResource("1_kqob7")
+
+[node name="LaserImg" type="Sprite2D" parent="."]
+texture = ExtResource("2_yqgd5")
+
+[node name="LaserCollison" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_0540o")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 3.0
+one_shot = true
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

@@ -1,0 +1,28 @@
+[gd_scene load_steps=4 format=3 uid="uid://s20brd6guyve"]
+
+[ext_resource type="Script" path="res://Player.gd" id="1_27fxx"]
+[ext_resource type="Texture2D" uid="uid://ddp1hasx76gd2" path="res://Screenshot (14).png" id="2_84q5w"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_pkcot"]
+radius = 59.0
+
+[node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_27fxx")
+speed = 400.0
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_84q5w")
+offset = Vector2(21, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_pkcot")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="ShotPoint" type="Node2D" parent="."]
+position = Vector2(104, 0)
+rotation = 1.5708
+
+[node name="Reload" type="Timer" parent="."]
+wait_time = 0.5
+one_shot = true

@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://dnv8srycyb7o1"]
+
+[ext_resource type="Script" path="res://game.gd" id="1_lis62"]
+[ext_resource type="PackedScene" uid="uid://s20brd6guyve" path="res://player.tscn" id="1_ssa1a"]
+[ext_resource type="PackedScene" uid="uid://dwukpjdqimhxw" path="res://enemy.tscn" id="3_oud7r"]
+
+[node name="Root" type="Node"]
+script = ExtResource("1_lis62")
+
+[node name="Player" parent="." instance=ExtResource("1_ssa1a")]
+
+[node name="Lasers" type="Node" parent="."]
+
+[node name="PolySpwn" type="Node" parent="."]
+
+[node name="Enemy" parent="." instance=ExtResource("3_oud7r")]
+speed = 1
